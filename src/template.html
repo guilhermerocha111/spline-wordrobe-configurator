@@ -10,12 +10,16 @@
 
   <body>
     <div id="root">
+      <!-- Canvas that the 3D model will be shown -->
       <canvas id="canvas3d"></canvas>
+      <!-- Right panel for changing the variables -->
       <div class="panel">
+        <!-- Button group to travel to another panel screen -->
         <div class="btn-group">
           <div class="btn shown unselectable" id="form">Form</div>
           <div class="btn unselectable" id="function">Function</div>
         </div>
+        <!-- panel screen 1 -->
         <div class="slider-group" id="slider-group">
           <p class="label">Height cm</p>
           <input type="range" min="0.5" max="3" va lue="1" step="0.1" class="slider" id="height" />
@@ -42,7 +46,9 @@
             </div>
           </div>
         </div>
+        <!-- panel screen 2 -->
         <div class="section-group hidden" id="section-group">
+          <!-- arrow buttons -->
           <div class="arrow-group">
             <div class="arrow unselectable arrow-left" id="arrow-left">
               <img src="<%=require("./images/arrow-left.png")%>" />
@@ -52,6 +58,7 @@
               <img src="<%=require("./images/arrow-right.png")%>" />
             </div>
           </div>
+          <!-- section1 -->
           <div class="section shown" id="section1">
             <p class="label">Type1</p>
             <div class="types">
@@ -66,6 +73,7 @@
               </div>
             </div>
           </div>
+          <!-- section2 -->
           <div class="section" id="section2">
             <p class="label">Type2</p>
             <div class="types">
@@ -80,6 +88,7 @@
               </div>
             </div>
           </div>
+          <!-- section3 -->
           <div class="section" id="section3">
             <p class="label">Type3</p>
             <div class="types">

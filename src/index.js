@@ -1,23 +1,22 @@
-// Test import of a JavaScript module
-import { example } from '@/js/example'
+// javascript module to import splinecode format
 import { Application } from '@splinetool/runtime'
-
-// Test import of an asset
-// import webpackLogo from '@/images/webpack-logo.svg'
 
 // Test import of styles
 import '@/styles/index.scss'
 
-// Appending to the DOM
-
+//canvas area to show 3D model.
 const canvas = document.getElementById('canvas3d')
 const spline = new Application(canvas)
+//import splinecode with link.
 spline.load('https://prod.spline.design/MOvLGnBMiF8SQzcO/scene.splinecode')
 
-// console.log(spline.getVariables())
+//handlers
+//all the handlers is created using id of each element
 const formbtn = document.getElementById('form')
 const functionbtn = document.getElementById('function')
 const sliderGroup = document.getElementById('slider-group')
+
+//handlers for variables in page 1
 const heightSlider = document.getElementById('height')
 const widthSlider = document.getElementById('width')
 const depthSlider = document.getElementById('depth')
@@ -25,6 +24,8 @@ const decor1 = document.getElementById('decor1')
 const decor2 = document.getElementById('decor2')
 const decor11 = document.getElementById('decor11')
 const decor12 = document.getElementById('decor12')
+
+//
 const sectioinGroup = document.getElementById('section-group')
 const arrowleft = document.getElementById('arrow-left')
 const arrowright = document.getElementById('arrow-right')
@@ -32,10 +33,11 @@ const sectionNum = document.getElementById('section-num')
 const section1 = document.getElementById('section1')
 const section2 = document.getElementById('section2')
 const section3 = document.getElementById('section3')
+
+//handlers for variables in page 2
 const type11 = document.getElementById('type11')
 const type12 = document.getElementById('type12')
 const type13 = document.getElementById('type13')
-
 const type21 = document.getElementById('type21')
 const type22 = document.getElementById('type22')
 const type23 = document.getElementById('type23')
@@ -43,12 +45,13 @@ const type31 = document.getElementById('type31')
 const type32 = document.getElementById('type32')
 const type33 = document.getElementById('type33')
 
+//section number to seek the section number in page 2
 let sectionNumber = 1
 
+// event handling function for variables in page 1
 heightSlider.addEventListener('change', function () {
   spline.setVariable('height_j79h1b3', heightSlider.value), false
 })
-
 widthSlider.addEventListener(
   'change',
   function () {
@@ -63,7 +66,6 @@ depthSlider.addEventListener(
   },
   false
 )
-
 decor1.addEventListener('click', function () {
   decor1.classList.add('shown')
   decor2.classList.remove('shown')
@@ -87,6 +89,9 @@ decor12.addEventListener('click', function () {
   decor11.classList.remove('shown')
   spline.setVariable('decor_fill_j79h1b3', 2)
 })
+/////////////////////////////
+
+// event handling function to switch between Form and Function.
 formbtn.addEventListener('click', function () {
   formbtn.classList.add('shown')
   functionbtn.classList.remove('shown')
@@ -100,6 +105,7 @@ functionbtn.addEventListener('click', function () {
   sectioinGroup.classList.remove('hidden')
 })
 
+// event handling function to switch between sections in page 2
 arrowleft.addEventListener('click', function () {
   if (sectionNumber > 1) sectionNumber--
   showSection(sectionNumber)
@@ -128,6 +134,8 @@ function showSection(num) {
   }
 }
 
+//event handling function for variables in page 2
+//from section1
 type11.addEventListener('click', function () {
   type11.classList.add('selected')
   type12.classList.remove('selected')
@@ -148,7 +156,7 @@ type13.addEventListener('click', function () {
   type13.classList.add('selected')
   spline.setVariable('section1_j79h1b3', 3)
 })
-
+//from section2
 type21.addEventListener('click', function () {
   type21.classList.add('selected')
   type22.classList.remove('selected')
@@ -169,7 +177,7 @@ type23.addEventListener('click', function () {
   type23.classList.add('selected')
   spline.setVariable('section2_j79h1b3', 3)
 })
-
+//from section3
 type31.addEventListener('click', function () {
   type31.classList.add('selected')
   type32.classList.remove('selected')
@@ -190,3 +198,4 @@ type33.addEventListener('click', function () {
   type33.classList.add('selected')
   spline.setVariable('section3_j79h1b3', 3)
 })
+/////////////////////////

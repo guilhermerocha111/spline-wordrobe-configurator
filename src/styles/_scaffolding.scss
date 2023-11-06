@@ -10,14 +10,6 @@ body {
   margin: auto;
   text-align: center;
   width: 100vw;
-  // padding: 40px;
-}
-#canvas3d {
-  // flex: 1;
-  width: 60% !important;
-  display: flex;
-  // margin: 100px;
-  border-radius: 20px;
 }
 #root {
   display: flex;
@@ -30,10 +22,13 @@ body {
   box-sizing: border-box;
   gap: 130px;
 }
+#canvas3d {
+  width: 60% !important;
+  display: flex;
+  border-radius: 20px;
+}
 .panel {
-  // background-color: white;
   width: 40%;
-  // min-width: 400px;
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -44,7 +39,6 @@ body {
 .slidecontainer {
   width: 100%;
 }
-
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -57,11 +51,9 @@ body {
   transition: opacity 0.2s;
   margin-bottom: 16px;
 }
-
 .slider:hover {
   opacity: 1;
 }
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -71,7 +63,6 @@ body {
   background: #04aa6d;
   cursor: pointer;
 }
-
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
